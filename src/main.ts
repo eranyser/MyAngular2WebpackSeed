@@ -1,8 +1,6 @@
-import "core-js";
-import "reflect-metadata";
-import "zone.js/dist/zone";
+import {str} from "./content";
+import "../css/style.css";
 
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {AppComponent} from "./app/app.component";
+document.write("this is a test");
 
-bootstrap(AppComponent);
+document.write(str);

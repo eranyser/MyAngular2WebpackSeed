@@ -2,10 +2,10 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: ['./src/cons.ts', './src/main.ts'],
     output: {
         path: "./dist",
-        filename: "vue.solutions.js"
+        filename: "bundle.js"
     },
     /**
      * Developer tool to enhance debugging
@@ -19,7 +19,8 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.ts$/, loader: 'ts'}
+            { test: /\.css$/, exclude: /node_modules/, loader: "style-loader!css-loader" },
+            { test: /\.ts$/, exclude: /node_modules/, loader: 'ts'}
         ]
     },
     resolve: {
